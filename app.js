@@ -240,7 +240,7 @@ function generateTodoCard(todoData){
     todoValue.style.background = "transparent";
     todoValue.innerText = todoData.value;
     todoValue.contentEditable = false;
-    todoValue.oninput = function(){ todoData.category = todoValue.innerText; saveData(); };
+    todoValue.oninput = function(){ todoData.value = todoValue.innerText; saveData(); };
 
     // Load Todo Text Style based on completed
     if(todoData.completed){
