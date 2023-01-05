@@ -261,7 +261,7 @@ function generateTodoCard(todoData){
     todoCategory.innerText = todoData.category;
     todoCategory.contentEditable = false;
     todoCategory.style.background = todoData.color;
-    if(!todoData.category){
+    if(!todoData.category || todoData.category == "" || todoData.category == "\n"){
         todoCategory.style.background = "transparent";
     }
     todoCard.appendChild(todoCategory);
@@ -393,7 +393,7 @@ function editTodo(todoData, todoValue){
         let todoCategory = todoValue.parentElement.querySelector("h3");
         todoCategory.contentEditable = false;
         todoCategory.style.background = "transparent";
-        if(todoData.category != ""){  
+        if(todoData.category != "" && todoData.category != "\n"){  
             todoCategory.style.background = todoData.color;
         }
     }
@@ -743,3 +743,4 @@ function updateProjectProgress(){
 // On Pade Load:
 getData();
 loadData();
+console.log(getSelectedProject());
