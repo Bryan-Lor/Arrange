@@ -240,10 +240,8 @@ function generateTodoCard(todoData){
     todoValue.style.background = "transparent";
     todoValue.innerText = todoData.value;
     todoValue.contentEditable = false;
-    todoValue.oninput = function(){ 
-        todoData.value = todoValue.innerText;
-        saveData();
-    };
+    todoValue.oninput = function(){ todoData.category = todoValue.innerText; saveData(); };
+
     // Load Todo Text Style based on completed
     if(todoData.completed){
         todoValue.style.textDecoration = "line-through";
@@ -314,8 +312,14 @@ function toggleTodoCompleted(todoData, todoValue){
 
 // Runs when username is modified
 function updateUserName(){
-    data.username = document.getElementById("username").value;
-    saveData();
+    let newUserName = document.getElementById("username");
+    if (newUserName.value == "" || !newUserName){
+        newUserName.value = data.username;
+    }
+    else{
+        newUserName.value;
+        saveData();
+    }
 }
 
 // Runs when add-project-card button is clicked
@@ -372,7 +376,7 @@ function editTodo(todoData, todoValue){
 
     // Toggle todo inedit data and update Html
     todoData.inedit = !(todoData.inedit);
-    todoValue.contentEditable = todoData.inedit.toString();
+    todoValue.contentEditable = todoData.inedit;
     if(todoData.inedit == true){
         todoValue.style.background = "rgba(1,1,1,.25)";
         todoValue.style.textDecoration = "none";
@@ -389,7 +393,7 @@ function editTodo(todoData, todoValue){
         let todoCategory = todoValue.parentElement.querySelector("h3");
         todoCategory.contentEditable = false;
         todoCategory.style.background = "transparent";
-        if(todoData.category.length > 0){  
+        if(todoData.category != ""){  
             todoCategory.style.background = todoData.color;
         }
     }
@@ -464,10 +468,15 @@ function updateProjectName(){
     if(!selectedProject) { return; }
     
     let projectTitleInput = document.getElementById("project-title-input");
-    selectedProject.projectname = projectTitleInput.value;
-    let selectedProjectElement = document.getElementById(selectedProject.id).querySelector("p");
-    selectedProjectElement.innerText = selectedProject.projectname;
-    saveData();
+    if (projectTitleInput.value == "" || !projectTitleInput) {
+        projectTitleInput.value = selectedProject.projectname;
+    }
+    else{
+        selectedProject.projectname = projectTitleInput.value;
+        let selectedProjectElement = document.getElementById(selectedProject.id).querySelector("p");
+        selectedProjectElement.innerText = selectedProject.projectname;
+        saveData();
+    }
 }
 
 // Queries and returns projects with selected as true
@@ -579,8 +588,13 @@ function selectProject(projectID){
 // Runs when alias input is changed
 function updateAlias(){
     let aliasElement = document.getElementById("alias");
-    getSelectedProject().todoalias = aliasElement.value;
-    saveData();
+    if (aliasElement.value == "" || !aliasElement.value){
+        aliasElement.value = getSelectedProject().todoalias;
+    }
+    else{
+        getSelectedProject().todoalias = aliasElement.value;
+        saveData();
+    }
 }
 
 // Runs on page load and/or when first project is created
