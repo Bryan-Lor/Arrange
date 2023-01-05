@@ -35,7 +35,7 @@ let todoInput = document.getElementById("todo-input");
 
 // Get Data from local storage
 function getData(){
-    data = JSON.parse(localStorage.getItem("todo-app"));
+    data = JSON.parse(localStorage.getItem("arrange-app"));
     if(data == null){
         data = {username:"User", projects:[], darktheme: true};
         saveData();
