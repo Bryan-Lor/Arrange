@@ -1,5 +1,5 @@
-# Arrange  
-Arrange is a web application that allows users to organize projects and their respective tasks.  
+# <img src="./images/ArrangeLogo.png" >rrange  
+Arrange is a web application that allows users to organize projects and their respective tasks. 
   
 [![Visit App](https://img.shields.io/badge/Visit_App-1E90FF?style=for-the-badge)](https://bryanlor-arrange.netlify.app/)
   
