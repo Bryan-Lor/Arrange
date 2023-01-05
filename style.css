@@ -478,6 +478,7 @@ body{
     }
     .todo-list-container{
         flex-direction: column;
+        padding-top: .75em;
     }
     #delete-project-button{
         padding-left: 0;
