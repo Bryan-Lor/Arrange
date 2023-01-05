@@ -48,7 +48,7 @@ function clearData(){
 
 // Saves data to local storage as "todo-app"
 function saveData(){
-    localStorage.setItem("todo-app", JSON.stringify(data));
+    localStorage.setItem("arrange-app", JSON.stringify(data));
 }
 
 // Runs on page load
