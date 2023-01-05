@@ -1,5 +1,7 @@
 # Arrange  
-Arrange is a task management app that allows users to organize projects and create tasks.  
+Arrange is a web application that allows users to organize projects and their respective tasks.  
+  
+[![Visit App](https://img.shields.io/badge/Visit_App-1E90FF?style=for-the-badge)](https://bryanlor-arrange.netlify.app/)
   
 ## Screenshots  
 <img src="./images/readme/arrange-app.png">
