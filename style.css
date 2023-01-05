@@ -439,7 +439,7 @@ body{
         width: auto;
         box-sizing: content-box;
         padding: .75em 1em;
-        background-color: var(--hierarchy-color);        
+        background-color: var(--hierarchy-color);
         color: var(--text-color);
     }
     .settings{
@@ -451,6 +451,9 @@ body{
     .settings-button, .theme-button, .help-button{
         position: static;
         margin: 0;
+    }
+    .card{
+        padding: .35em 0;
     }
     #todo-project{
         width: auto;
@@ -467,7 +470,10 @@ body{
         gap: 0.5em;
     }
     #todo-project-data form input{
-        padding: 0.35em;
+        padding: 0.5em;
+    }
+    #todo-list .card{
+        margin: .5em 0;
     }
     .todo-list-container{
         flex-direction: column;
