@@ -597,8 +597,8 @@ function showProjectDataElement(){
 
     // Displays the todo-project-data Div
     let projectDataElement = document.getElementById("todo-project-data");
-    if(projectDataElement.style.display != "block"){
-        projectDataElement.style.display = "block";
+    if(projectDataElement.style.display != "flex"){
+        projectDataElement.style.display = "flex";
     }
 }
 

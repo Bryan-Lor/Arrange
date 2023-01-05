@@ -426,3 +426,33 @@ body{
 #todo-list .card button:hover{
     transform: scale(1.2);
 }
+
+
+@media only screen and (max-width: 768px) {
+    .todo-app{
+        flex-direction: column;
+    }
+    .todo-hierarchy{
+        width: auto;
+        box-sizing: content-box;
+        padding: .75em 1em;
+        background-color: var(--hierarchy-color);        
+        color: var(--text-color);
+    }
+    #todo-project{
+        width: auto;
+    }
+    #todo-project-data{
+        flex-direction: column;
+    }
+    #todo-project-data form{
+        display: grid;
+        gap: 0.5em;
+    }
+    #todo-project-data form input{
+        padding: 0.35em;
+    }
+    .todo-list-container{
+        flex-direction: column;
+    }
+}
