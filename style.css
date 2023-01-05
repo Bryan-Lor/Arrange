@@ -1,0 +1,428 @@
+*{
+    margin: 0;
+    padding: 0;    
+    font-family: 'PT Sans', sans-serif;
+    outline: none;
+    border: none;
+    color: var(--text-color);
+    transition: 400ms;
+    animation: load-fade 200ms ease-in;
+}
+
+:root{
+    --color: rgb(45, 45, 45);
+    --text-color: rgb(62, 62, 62);
+    --text-color2: rgb(75, 75, 75);
+    --body-color: rgb(250, 254, 255);
+    --hierarchy-color: rgb(243, 244, 247);
+    --project-highlight-color: lightgrey;
+    --card-drop-shadow: rgba(164, 164, 164, 1);
+    --gradient-color: linear-gradient(to right, #5b86e5, #36d1dc);
+    --special-text-color: white;
+}
+
+h1{
+    font-size: 1.25em;
+    cursor:  default;
+}
+
+h3{
+    font-size: .75em;
+    font-weight: 300;
+    text-transform: uppercase;
+    letter-spacing: .05em;
+    cursor: default;
+}
+
+i{
+    pointer-events: none;
+    color: var(--text-color);
+}
+
+button{
+    background-color: transparent;
+    cursor: pointer;
+}
+
+body{
+    background-color: var(--body-color);
+}
+
+#date{
+    color: var(--text-color2);
+    font-size: .8em;
+    text-transform: uppercase;
+    font-weight: bold;
+    cursor:  default;
+}
+
+/* --------------------- CSS Animations --------------------- */
+
+@keyframes append-grow {
+	from {
+		transform: scale(.96) translate(0, .15em);
+		opacity: 0;
+	}
+	to {
+		transform: scale(1) translate(0, 0);
+		opacity: 1;	
+	}
+}
+
+@keyframes load-fade {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;	
+	}
+}
+
+/* --------------------- Todo Hierarchy --------------------- */
+.todo-app{
+    display: flex;
+    width: min(100vw, 100%);
+    min-height: 100vh;
+}
+
+.todo-hierarchy{
+    background-color: var(--hierarchy-color);
+    width: 18vw;
+    min-width: 200px;
+    color: var(--text-color);
+    box-sizing: content-box;
+    padding: .75em 1em;
+}
+
+.todo-menu{
+    display: flex;
+    box-sizing: border-box;
+    width: 100%;
+    align-items: center;
+    overflow: hidden;
+}
+
+.todo-menu input{
+    box-sizing: content-box;
+    flex: 1;
+    padding: 0 .25em;
+    font-size: 1.25em;
+    font-weight: 600;
+    overflow: hidden;
+    background-color: transparent;
+}
+
+#todo-favorites, #todo-projects{
+    padding: .75em 0;
+}
+
+#todo-favorites h3, #todo-projects h3{
+    margin-bottom: .5em;
+}
+
+.card{
+    margin: .25em 0;
+    display: grid;
+    align-items: center;
+    grid-template-columns: .5fr 2.5fr 1fr;
+    border-radius: .5em;
+    transition: 200ms;
+    background-color: var(--body-color);
+    filter: drop-shadow(0px 2px 4px var(--card-drop-shadow));
+    cursor: pointer;
+    word-break: break-all;
+    animation: append-grow 250ms ease-in;
+}
+
+.card:hover{
+    background-color: var(--project-highlight-color);
+    transform: scale(1.05);
+}
+
+.card button{
+    font-size: 1.5em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 200ms;
+}
+
+.card p{
+    user-select: none;
+}
+
+.card i{
+    font-size: .60em;
+    color: var(--c1);
+    padding: 0 .75em;
+}
+
+.favorite-button:hover{
+    font-size: 1.75em;
+}
+
+.add-project-card{
+    font-size: 1.5em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.add-project-card button{
+    width: 100%;
+    margin: .25em 0;
+    padding: .25em 0;
+    border-radius: .5em;
+    transition: 200ms;  
+    background-color: dodgerblue;
+    background: var(--gradient-color);
+    filter: drop-shadow(0px 2px 2px var(--card-drop-shadow));
+}
+
+.add-project-card button:hover{
+    transform: scale(1.05);
+}
+
+.add-project-card i{
+    color: var(--special-text-color);
+}
+
+.settings-button, .theme-button{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    margin: .75em;
+    font-size: 1em;
+    transition: 375ms;
+}
+
+.theme-button{
+    margin-left: 2.5em;
+    transform: rotate(90deg);
+}
+
+.help-button{
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    margin: .45em;
+    font-size: 1em;
+    transition: 375ms;
+}
+
+.settings-button:hover, .theme-button:hover{
+    transform: scale(1.15) rotate(45deg);
+}
+
+.help-button:hover{
+    transform: scale(1.15) rotate(-20deg);
+}
+
+/* --------------------- Todo Project --------------------- */
+
+#todo-project{
+    flex: 1;
+    padding: 0 2em;
+}
+
+#empty-data{
+    box-sizing: content-box;
+    height: 100%;
+    height: calc(100% - 2.5em * 2);
+    margin: 2.5em 2em;
+    display: none;
+    flex: 1;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--hierarchy-color);
+    border-radius: .25em;
+}
+
+#empty-data i{
+    font-size: xx-large;
+}
+
+#empty-data h3{
+    font-size: 1em;
+    font-weight: 900;
+}
+
+#empty-data .add-project-card{
+    display: flex;
+    flex-direction: column;
+}
+
+#empty-data .add-project-card button{
+    padding: .25em 10em;
+}
+
+#empty-data .add-project-card button i{
+    font-size: 1.5em;
+}
+
+#todo-project-data{
+    display: none;
+    padding-top: .5em;
+}
+
+.project-title{
+    display: flex;
+    gap: 1em;
+    align-items: center;
+}
+
+.project-title input{
+    flex: 1;
+    font-size: 1.5em;
+    font-weight: 600;
+    background-color: transparent;
+}
+
+#delete-project-button{
+    position: relative;
+    align-items: center;
+    font-size: 1.25em;
+    padding-left: 1em;
+    padding-right: .25em;
+    transition: 350ms;
+    transform: scale(1.2);
+}
+
+#delete-project-button:hover{
+    transform: scale(1.35);
+}
+
+#delete-project-button i{
+    position: relative;
+    z-index: 2;
+    justify-content: right;
+}
+#delete-project-button div{
+    position: absolute;
+    content: "";
+    width: .65em;
+    height: .65em;
+    right: .35em;
+    top: .31em;
+    background-color: var(--special-text-color);
+    z-index: 1;
+}
+
+#todo-project-data form{
+    margin-top: .28em;
+    display: flex;
+    gap: .25em;
+}
+
+#todo-project-data form input{
+    background-color: rgba(1, 1, 1, .125);
+    padding: 0 .5em;
+    border-radius: .15em;
+    margin-right: .25em;
+}
+
+.project-progress-bar-div{
+    width: 100%;
+    min-width: min(1%, .25em);
+    height: .3em;
+    margin-bottom: calc(1.4em - .3em);
+    margin-top: .2em;
+    border-radius: .1em;
+    transition: 600ms;
+    transition-delay: 220ms;
+    background-color: rgba(1, 1, 1, .125);
+    cursor: pointer;
+}
+
+#project-progress-bar{
+    width: 100%;
+    min-width: min(1%, .25em);
+    height: 100%;
+    border-radius: .1em;
+    background-color: var(--special-text-color);
+}
+
+.todo-form-header{
+    display: flex;
+    gap: .35em;
+    align-items: center;
+}
+
+.todo-form-header button i{
+    font-size: .85em;
+}
+
+#alias{
+    text-transform: uppercase;
+    color: var(--text-color);
+    font-size: 1em;
+    font-weight: 300;
+    text-transform: uppercase;
+    letter-spacing: normal;
+    background: transparent;
+}
+
+#todo-input{
+    flex: 1;
+}
+
+#todo-project-data form button{
+    padding: .2em .5em;
+    margin-left: .25em;
+    background: dodgerblue;
+    color: var(--special-text-color);
+    border-radius: .35em;
+    text-transform: uppercase;
+}
+
+#todo-project-data form button:hover{
+    transform: scale(1.05);
+}
+
+.todo-list-container{
+    padding-top: 1.6em;
+    margin-top: .25em;
+    margin-bottom: 2em;
+}
+
+#todo-list .card{
+    background-color: var(--hierarchy-color);
+    margin: .25em 0;
+    display: flex;
+    align-content: center;
+}
+
+#todo-list .card p{
+    flex: 1;
+    font-size: 1em;
+    word-break: break-all;
+    background: transparent;
+    padding: 0 .25em;
+    border-radius: .25em;
+}
+
+#todo-list .card h3{
+    min-width: .5em;
+    font-size: .925em;
+    text-transform: none;
+    letter-spacing: normal;
+    padding: 0 .45em;
+    margin: 0 .5em;
+    border-radius: .35em;
+    cursor: pointer;
+    user-select: none;
+}
+
+#todo-list .card:hover{
+    background-color: var(--project-highlight-color);
+    transform: scale(1.025);
+}
+
+#todo-list .card button {
+    padding: .2em;
+}
+
+#todo-list .card button:hover{
+    transform: scale(1.2);
+}
