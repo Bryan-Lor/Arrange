@@ -42,11 +42,12 @@ function getData(){
     }
 }
 
+// Clear local storage
 function clearData(){
     localStorage.clear();
 }
 
-// Saves data to local storage as "todo-app"
+// Saves data to local storage
 function saveData(){
     localStorage.setItem("arrange-app", JSON.stringify(data));
 }
@@ -743,4 +744,3 @@ function updateProjectProgress(){
 // On Pade Load:
 getData();
 loadData();
-console.log(getSelectedProject());
