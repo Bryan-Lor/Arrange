@@ -12,7 +12,10 @@ Originally I wanted an application to organize my projects and further streamlin
 - Handling LocalStorage
 - Deploying Apps on Netlify
   
-## Screenshots  
+##
+<details>  
+<summary><b>SHOW SCREENSHOTS</b></summary>  
+   
 <img src="./images/readme/arrange-app.png">
 <img src="./images/readme/screenshot1.PNG">
 <img src="./images/readme/screenshot2.PNG">
@@ -20,3 +23,4 @@ Originally I wanted an application to organize my projects and further streamlin
 <!---
 <img src="./images/readme/arrange-mobile.png">
 --->
+</details>
