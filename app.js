@@ -557,6 +557,9 @@ function loadSelectedProject(){
     let aliasElement = document.getElementById("alias");
     aliasElement.value = selectedProject.todoalias;
 
+    // Clear Todo Category
+    document.getElementById("todo-category").value = null;
+
     // Clear Current Todo List
     deleteTodoCards();
 
