@@ -1,5 +1,5 @@
 # <img src="./images/ArrangeLogo.png" >rrange  ![Netlify Status](https://api.netlify.com/api/v1/badges/ddaacad5-4924-4937-adbe-80a50261621b/deploy-status)
-Arrange is a web application that allows users to organize projects and their respective tasks. 
+Arrange is a client-side web application that allows users to map projects with their respective tasks. Its purpose is to streamline productivity by simplifying the process of getting things done.
   
 [![Visit App](https://img.shields.io/badge/Visit_App-1E90FF?style=for-the-badge)](https://bryanlor-arrange.netlify.app/)
 
