@@ -4,7 +4,7 @@ Arrange is a client-side web application that allows users to map projects with 
 [![Visit App](https://img.shields.io/badge/Visit_App-1E90FF?style=for-the-badge)](https://bryanlor-arrange.netlify.app/)
 
 ## 
-Originally I wanted to develop an application to organize my projects while learning HTML DOM manipulation. This led to the creation of Arrange, which proved to be a great learning experience. To expand my knowledge of React and how it dynamically updates DOM, I decided to structure the project to use only vanilla JavaScript. As a result, I learned that manually handling DOMs is a pain. I now understand why frameworks such as React are widely appreciated and utilized. Additionally, I have configured Arrange to be linked and deployed on Netlify. 
+I developed Arrange as a personal project to organize my tasks while gaining expertise in HTML DOM manipulation. In the process, I gained valuable insights into the benefits of using React for dynamic DOM updates over manual handling. This project was also deployed on Netlify for easy access.
   
 **Lessons Learned:**
 - Creating Single Page Applications
